@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using BasicMath;
+using BasicMath.BasicMathBLL;
+using System.Collections.Generic;
 
 namespace BasicMathTest
 {
@@ -9,9 +11,11 @@ namespace BasicMathTest
 	{
 		[TestMethod]
 		public void Test_AddMethod()
-		{
+		{			
+			DataConnectivity data = new DataConnectivity();
 			BasicMaths bm = new BasicMaths();
-			double res = bm.Add(10, 10);
+			List<int> val = data.GetData();
+			double res = bm.Add(val[0], val[1]);
 			Assert.AreEqual(res, 20);
 		}
 		[TestMethod]
