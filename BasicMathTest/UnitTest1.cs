@@ -41,7 +41,7 @@ namespace BasicMathTest
 		{
 			BasicMaths bm = new BasicMaths();
             val = data.GetData();
-            double res = bm.Multiply(10, 10);
+            double res = bm.Multiply(val[0], val[1]);
 			Assert.AreEqual(res, 300);
 		}
 	}
