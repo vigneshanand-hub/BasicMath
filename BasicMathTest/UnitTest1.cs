@@ -9,35 +9,40 @@ namespace BasicMathTest
 	[TestClass]
 	public class UnitTest1
 	{
-		[TestMethod]
+       public DataConnectivity data = new DataConnectivity();
+		public List<int> val = new List<int>();
+
+        [TestMethod]
 		public void Test_AddMethod()
-		{			
-			DataConnectivity data = new DataConnectivity();
+		{		
 			BasicMaths bm = new BasicMaths();
-			List<int> val = data.GetData();
+			val = data.GetData();
 			double res = bm.Add(val[0], val[1]);
-			Assert.AreEqual(res, 20);
+			Assert.AreEqual(res, 35);
 		}
 		[TestMethod]
 		public void Test_SubstractMethod()
 		{
 			BasicMaths bm = new BasicMaths();
-			double res = bm.Substract(10, 10);
-			Assert.AreEqual(res, 0);
+            val = data.GetData();
+            double res = bm.Substract(val[0], val[1]);
+			Assert.AreEqual(res, 5);
 		}
 		[TestMethod]
 		public void Test_DivideMethod()
 		{
 			BasicMaths bm = new BasicMaths();
-			double res = bm.divide(10, 5);
-			Assert.AreEqual(res, 2);
+            val = data.GetData();
+            double res = Math.Round(bm.divide(val[0], val[1]),2);
+			Assert.AreEqual(res, 1.33);
 		}
 		[TestMethod]
 		public void Test_MultiplyMethod()
 		{
 			BasicMaths bm = new BasicMaths();
-			double res = bm.Multiply(10, 10);
-			Assert.AreEqual(res, 100);
+            val = data.GetData();
+            double res = bm.Multiply(10, 10);
+			Assert.AreEqual(res, 300);
 		}
 	}
 }
